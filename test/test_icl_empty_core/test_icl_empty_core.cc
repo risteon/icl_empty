@@ -4,28 +4,19 @@
 /*!\file
  *
  * \author  Christoph Rist <christoph_bernd.rist@daimler.com>
- * \date    2017-09-24
+ * \date    2017-09-20
  *
  */
 //----------------------------------------------------------------------
 
-#ifndef ICL_EMPTY_ICL_EMPTY_CORE_DEMO_H
-#define ICL_EMPTY_ICL_EMPTY_CORE_DEMO_H
+#include <icl_empty_core/demo.h>
 
-#include <cstdint>
+#include "gtest/gtest.h"
 
-namespace icl_empty {
-namespace core {
 
-class Foo
+TEST(test_icl_empty_core, demo)
 {
-public:
-  void hello() const;
-  int32_t test() const  { return 42; }
-};
-
-
-} //< ns core
-} //< ns icl_empty
-
-#endif //< ICL_EMPTY_ICL_EMPTY_CORE_DEMO_H
+  using namespace icl_empty::core;
+  Foo f{};
+  EXPECT_EQ(42, f.test());
+}
